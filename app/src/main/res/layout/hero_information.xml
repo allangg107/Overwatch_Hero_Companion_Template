@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".MainActivity"
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp"
+    android:background="@drawable/hero_info_gradient_background">
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="backButton"
+            android:text="@string/back"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="48dp"
+            app:layout_constraintTop_toBottomOf="@id/backButton"
+            app:layout_constraintStart_toStartOf="parent" >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent">
+
+                <TextView
+                    android:id="@+id/heroNameTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textAlignment="textStart"
+                    android:textSize="40sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <ImageView
+                    android:id="@+id/heroInfoBackgroundImage"
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="15dp"
+                    app:layout_constraintTop_toBottomOf="@id/heroNameTextView"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/heroDifficultyTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textAlignment="textStart"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/heroInfoBackgroundImage"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/strengthTitleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Strengths"
+                    android:textAlignment="textStart"
+                    android:textColor="#20CC0D"
+                    android:textSize="25sp"
+                    android:paddingTop="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/heroDifficultyTextView"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/strengthTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textAlignment="textStart"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/strengthTitleTextView"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/weaknessTitleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Weaknesses"
+                    android:textAlignment="textStart"
+                    android:textColor="#D50726"
+                    android:textSize="25sp"
+                    app:layout_constraintTop_toBottomOf="@id/strengthTextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:paddingTop="10dp" />
+
+                <TextView
+                    android:id="@+id/weaknessTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textAlignment="textStart"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/weaknessTitleTextView"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/heroStatsTitleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Stats"
+                    android:textAlignment="textStart"
+                    android:textSize="25sp"
+                    android:textColor="#EDB60F"
+                    app:layout_constraintTop_toBottomOf="@id/weaknessTextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:paddingTop="10dp" />
+
+                <TextView
+                    android:id="@+id/heroHealthArmorShieldTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textAlignment="textStart"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/heroStatsTitleTextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:paddingTop="5dp" />
+
+                <TextView
+                    android:id="@+id/heroLeftClickDamageTitleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Left Click:"
+                    android:textColor="@color/black"
+                    android:textAlignment="textStart"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/heroHealthArmorShieldTextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:paddingTop="10dp" />
+
+                <TextView
+                    android:id="@+id/heroLeftClickDamageTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textAlignment="textStart"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/heroLeftClickDamageTitleTextView"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/heroRightClickDamageTitleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Right Click:"
+                    android:textColor="@color/black"
+                    android:textAlignment="textStart"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/heroLeftClickDamageTextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:paddingTop="10dp" />
+
+                <TextView
+                    android:id="@+id/heroRightClickDamageTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textAlignment="textStart"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/heroRightClickDamageTitleTextView"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/heroSpeedTitleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Speed:"
+                    android:textColor="@color/black"
+                    android:textAlignment="textStart"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/heroRightClickDamageTextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:paddingTop="10dp" />
+
+                <TextView
+                    android:id="@+id/heroSpeedTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textAlignment="textStart"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/heroSpeedTitleTextView"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/heroAbilitiesTitleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Abilities"
+                    android:textAlignment="textStart"
+                    android:textSize="25sp"
+                    android:textColor="#0C31E6"
+                    app:layout_constraintTop_toBottomOf="@id/heroSpeedTextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:paddingTop="10dp" />
+
+                <TextView
+                    android:id="@+id/heroPassiveNameTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textAlignment="textStart"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/heroAbilitiesTitleTextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:paddingTop="5dp" />
+
+                <TextView
+                    android:id="@+id/heroPassiveTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textAlignment="textStart"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/heroPassiveNameTextView"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/heroAbility1NameTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textAlignment="textStart"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/heroPassiveTextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:paddingTop="10dp" />
+
+                <TextView
+                    android:id="@+id/heroAbility1TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textAlignment="textStart"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/heroAbility1NameTextView"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/heroAbility2NameTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textAlignment="textStart"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/heroAbility1TextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:paddingTop="10dp" />
+
+                <TextView
+                    android:id="@+id/heroAbility2TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textAlignment="textStart"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/heroAbility2NameTextView"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/heroUltimateNameTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textAlignment="textStart"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/heroAbility2TextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:paddingTop="10dp" />
+
+                <TextView
+                    android:id="@+id/heroUltimateTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textAlignment="textStart"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/heroUltimateNameTextView"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/heroTipsAndTricksTitleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tips and Tricks"
+                    android:textAlignment="textStart"
+                    android:textSize="25sp"
+                    android:textColor="#9C09DA"
+                    app:layout_constraintTop_toBottomOf="@id/heroUltimateTextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:paddingTop="10dp" />
+
+                <TextView
+                    android:id="@+id/heroTipsAndTricksTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textAlignment="textStart"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/heroTipsAndTricksTitleTextView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="16dp"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

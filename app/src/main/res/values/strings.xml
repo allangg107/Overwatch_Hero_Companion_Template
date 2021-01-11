@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Overwatch Hero Companion</string>
+    <string name="title_text">Overwatch Hero Companion</string>
+    <string name="hero_name">Hero Name</string>
+    <string name="sort_text"> <u>Sort</u> </string>
+    <string name="filter_text"> <u>Filter</u> </string>
+    <string name="other_text"> <u>Other</u> </string>
+    <string name="back">Back</string>
+    <string name="strength_title_text">Strengths</string>
+    <string name="strength_text">These are the strengths of the hero.</string>
+    <string name="weakness_title_text">Weaknesses</string>
+    <string name="weakness_text">These are the weaknesses of the hero.</string>
+    <string name="close_button_text">x</string>
+</resources>

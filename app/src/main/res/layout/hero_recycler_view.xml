@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainGridLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="2"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:background="@drawable/main_view_gradient_background">
+
+    <Button
+        android:id="@+id/randomHeroButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="121dp"
+        android:onClick="randomHeroButton_OnClick"
+        android:text="Random Hero"
+        app:layout_constraintBottom_toTopOf="@+id/mainView"
+        app:layout_constraintEnd_toStartOf="@+id/optionsButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.032"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+
+    <Button
+        android:id="@+id/optionsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="optionsButton_OnClick"
+        android:text="Options"
+        app:layout_constraintBottom_toTopOf="@+id/mainView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.032" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mainView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:paddingBottom="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/randomHeroButton" />
+
+    <LinearLayout
+        android:id="@+id/optionsParentLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintTop_toBottomOf="@id/optionsButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="7dp"
+        android:layout_marginTop="3dp"
+        >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/optionsLayout"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/options_border">
+
+            <Button
+                android:id="@+id/optionsCloseButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:textSize="12sp"
+                android:text="@string/close_button_text"
+                android:minHeight="0dp" android:minWidth="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:onClick="optionsButton_OnClick"/>
+
+            <TextView
+                android:id="@+id/sortTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:text="@string/sort_text"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/defaultSortButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <Button
+                android:id="@+id/defaultSortButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Default"
+                app:layout_constraintTop_toBottomOf="@id/sortTextView"
+                app:layout_constraintBottom_toTopOf="@id/filterTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/healthSortButton"
+                android:onClick="sortHeroesByDefault"/>
+
+        <Button
+            android:id="@+id/healthSortButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Health"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="@id/defaultSortButton"
+            app:layout_constraintBottom_toBottomOf="@id/defaultSortButton"
+            app:layout_constraintStart_toEndOf="@id/defaultSortButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:onClick="sortHeroesByHealth"/>
+
+            <TextView
+                android:id="@+id/filterTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/filter_text"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/defaultSortButton"
+                app:layout_constraintBottom_toTopOf="@id/defaultFilterButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/defaultFilterButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Default"
+            app:layout_constraintTop_toBottomOf="@id/filterTextView"
+            app:layout_constraintBottom_toTopOf="@id/tankFilterButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/damageFilterButton"
+            android:onClick="filterForDefaultHeroes"/>
+
+            <Button
+                android:id="@+id/damageFilterButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Damage"
+                app:layout_constraintTop_toTopOf="@id/defaultFilterButton"
+                app:layout_constraintBottom_toBottomOf="@id/defaultFilterButton"
+                app:layout_constraintStart_toEndOf="@id/defaultFilterButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:onClick="filterForDamageHeroes"/>
+
+        <Button
+            android:id="@+id/tankFilterButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tank"
+            app:layout_constraintTop_toBottomOf="@id/defaultFilterButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/supportFilterButton"
+            android:onClick="filterForTankHeroes"/>
+
+            <Button
+                android:id="@+id/supportFilterButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Support"
+                app:layout_constraintTop_toTopOf="@id/tankFilterButton"
+                app:layout_constraintBottom_toBottomOf="@id/tankFilterButton"
+                app:layout_constraintStart_toEndOf="@id/tankFilterButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:onClick="filterForSupportHeroes"/>
+
+            <!--<TextView
+                android:id="@+id/otherTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/other_text"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@id/supportFilterButton"
+                app:layout_constraintBottom_toTopOf="@id/giveFeedbackButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:onClick="optionsButton_OnClick"/>
+
+            <Button
+                android:id="@+id/giveFeedbackButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Give Feedback"
+                app:layout_constraintTop_toBottomOf="@id/otherTextView"
+                app:layout_constraintBottom_toTopOf="@id/giveFeedbackButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:onClick="optionsButton_OnClick"/>-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
